@@ -40,12 +40,6 @@ client.connect(err => {
         })
     })
 
-    app.delete('/deleteEvent/:id',(req,res) => {
-        const id = ObjectID(req.params.id);
-        console.log('delete this',id);
-        eventCollection.findOneAndDelete({_id: id})
-        .then(documents => res.send(!!documents.value))
-    })
 });
 
 
